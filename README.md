@@ -1,3 +1,17 @@
+
+#### Expressions
+
+Expressão para pegar o nome do site collection
+```
+substring(variables('varItemURL'),length(variables('varSiteRoot')),indexOf(substring(variables('varItemURL'),length(variables('varSiteRoot'))),'/'))
+
+```
+
+Expressão para pegar o ID da lista
+```
+split(split(uriQuery(variables('varItemURL')), '%7B')[1],'%7D')
+```
+
 #### Json para criar o button de execução do flow
 
 ```
@@ -35,15 +49,3 @@
 }
 ```
 
-#### Expressions
-
-Expressão para pegar o nome do site collection
-```
-substring(variables('varItemURL'),length(variables('varSiteRoot')),indexOf(substring(variables('varItemURL'),length(variables('varSiteRoot'))),'/'))
-
-```
-
-Expressão para pegar o ID da lista
-```
-split(split(uriQuery(variables('varItemURL')), '%7B')[1],'%7D')
-```
